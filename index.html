@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jithesh Krishnan — Digital Transformation</title>
-
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
-  
+  <title>Jithesh Krishnan — ServiceNow Practice Manager</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230A0A0A'/><line x1='44' y1='4' x2='56' y2='96' stroke='%23C8FF00' stroke-width='6' stroke-linecap='square'/><text x='6' y='78' font-family='monospace' font-size='72' font-weight='700' fill='%23F2F0EB'>J</text><text x='52' y='78' font-family='monospace' font-size='72' font-weight='700' fill='%23C8FF00'>K</text></svg>"/>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg"/>
+  <link rel="shortcut icon" href="favicon.svg"/>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230A0A0A'/%3E%3Ctext x='8' y='72' font-family='monospace' font-size='58' font-weight='700' fill='%23F2F0EB' letter-spacing='-3'%3EJ%3C/text%3E%3Cline x1='50' y1='8' x2='62' y2='92' stroke='%23C8FF00' stroke-width='5' stroke-linecap='square'/%3E%3Ctext x='56' y='72' font-family='monospace' font-size='58' font-weight='700' fill='%23C8FF00' letter-spacing='-3'%3EK%3C/text%3E%3C/svg%3E"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
@@ -282,6 +283,8 @@
       cursor: default;
     }
     .sk:hover { background: var(--ink); color: var(--lime); box-shadow: 3px 3px 0 var(--lime2); transform: translate(-1px,-1px); }
+    .sk.sn-core { background: #EEE8FF; border-color: #6E3FF3; color: #4F2DB0; }
+    .sk.sn-core:hover { background: #6E3FF3; color: #fff; box-shadow: 3px 3px 0 #4F2DB0; }
 
     .cert-item {
       display: flex; align-items: flex-start; gap: 14px;
@@ -561,46 +564,19 @@
     </div>
     <div class="about-grid">
       <div class="about-left">
-        <p class="about-lead reveal">
-          I don't just implement platforms — I <span class="underline-lime">architect the systems</span> that transform how organisations work.
+        <p class="about-lead reveal" id="about-lead">
+          <span class="loading-pulse">Loading...</span>
         </p>
-        <div class="about-body reveal">
-          <p>As <strong>Practice Manager at zeb</strong>, I head the ServiceNow Service Management Practice, owning the full lifecycle from strategic roadmapping and architectural governance to delivery excellence and client success. My remit spans the entire digital workflow suite — Portal, ITSM, HRSD, CSM, and the Now Platform.</p>
-          <p>My career has been a deliberate progression from developer to architect to leader. That hands-on engineering foundation gives me something most managers lack: I can move fluidly between boardroom strategy and technical solutioning — ensuring what gets promised is actually deliverable, and delivered well.</p>
-          <p>I'm driven by the belief that <strong>enterprise software should feel effortless to the people using it</strong>. That conviction shapes every architecture decision, every portal experience, and every team I build.</p>
-        </div>
+        <div class="about-body reveal" id="about-body"></div>
       </div>
       <div class="about-right reveal">
         <div class="brut-heading">Core Expertise</div>
-        <div class="skills-wrap">
-          <span class="sk">ITSM</span><span class="sk">HRSD</span><span class="sk">CSM</span>
-          <span class="sk">Now Platform</span><span class="sk">Service Portal</span>
-          <span class="sk">Employee Center</span><span class="sk">Flow Designer</span>
-          <span class="sk">Integration Hub</span><span class="sk">Virtual Agents & AI</span>
-          <span class="sk">Custom App Dev</span><span class="sk">CMDB & Discovery</span>
-          <span class="sk">React / HTML / JS</span><span class="sk">Power Platform</span>
-          <span class="sk">SharePoint</span>
+        <div class="skills-wrap" id="skills-wrap">
+          <span class="loading-pulse">Loading skills...</span>
         </div>
         <div class="brut-heading">Certifications</div>
-        <div class="cert-item">
-          <div class="cert-badge">01</div>
-          <div><div class="cert-name">Certified System Administrator (CSA)</div><div class="cert-org">ServiceNow</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">02</div>
-          <div><div class="cert-name">Certified Application Developer</div><div class="cert-org">ServiceNow</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">03</div>
-          <div><div class="cert-name">Certified Implementation Specialist – HR</div><div class="cert-org">ServiceNow</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">04</div>
-          <div><div class="cert-name">Micro-Certification – Flow Designer</div><div class="cert-org">ServiceNow</div></div>
-        </div>
-        <div class="cert-item">
-          <div class="cert-badge">05</div>
-          <div><div class="cert-name">Micro-Certification – CMDB Health</div><div class="cert-org">ServiceNow</div></div>
+        <div id="certs-list">
+          <span class="loading-pulse">Loading certifications...</span>
         </div>
       </div>
     </div>
@@ -616,90 +592,10 @@
         <h2 class="s-title">Experience</h2>
       </div>
     </div>
-    <div class="exp-list">
-
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">JUL 2025 — PRESENT</div>
-          <div class="exp-co">ZEB</div>
-          <div class="exp-loc">Chennai, India</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">Practice Manager,<br>Solutions & Delivery</div>
-          <p class="exp-desc">Leading the ServiceNow Service Management Practice, I define the strategic roadmap, set architectural standards, and drive growth across Portal, ITSM, HRSD, and CSM. I govern the architectural integrity of every engagement — translating client challenges into scalable, high-impact technical solutions — while overseeing onshore delivery and enforcing rigorous quality at every stage. I also lead talent development: building career frameworks, running technical mentorship programmes, and managing strategic capacity planning for the practice.</p>
-          <div class="exp-callout">▶ Responsible for product roadmaps, AI-powered workflow solutions, and actively growing a high-performing delivery practice.</div>
-          <div class="exp-tags">
-            <span class="etag">Practice Strategy</span><span class="etag">Solution Architecture</span>
-            <span class="etag">Delivery Governance</span><span class="etag">P&L Ownership</span>
-            <span class="etag">Team Leadership</span><span class="etag">AI Workflows</span>
-          </div>
-        </div>
+    <div class="exp-list" id="exp-list">
+      <div style="padding:48px;font-family:var(--ff-mono);font-size:12px;color:#888;">
+        <span class="loading-pulse">Loading experience...</span>
       </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">MAY 2024 — JUL 2025</div>
-          <div class="exp-co">ZEB</div>
-          <div class="exp-loc">Chennai, India</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">ServiceNow<br>Solution Consultant</div>
-          <p class="exp-desc">Partnered with UI/UX specialists to design and architect ServiceNow portal solutions that elevated self-service experience to enterprise grade. Facilitated ITSM and Now Platform workshops with senior stakeholders, gathering and prioritising requirements that shaped multi-quarter delivery roadmaps. Served as the primary relationship lead for key accounts — navigating complexity, resolving escalations, and securing long-term client confidence.</p>
-          <div class="exp-tags">
-            <span class="etag">Portal Architecture</span><span class="etag">ITSM</span>
-            <span class="etag">Executive Stakeholders</span><span class="etag">Workshops</span>
-            <span class="etag">Client Success</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">MAY 2023 — APR 2024</div>
-          <div class="exp-co">AVASOFT</div>
-          <div class="exp-loc">Chennai, India</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">ServiceNow<br>Technical Consultant</div>
-          <p class="exp-desc">Advised enterprise clients on ServiceNow Portal best practices and led the design, development, and deployment of custom applications integrated with third-party systems. Managed a team of portal developers — setting technical direction, unblocking delivery, and ensuring outcomes were shipped on time and within budget. Bridged the gap between client business requirements and production-ready solutions.</p>
-          <div class="exp-tags">
-            <span class="etag">Custom App Dev</span><span class="etag">Integrations</span>
-            <span class="etag">Team Lead</span><span class="etag">Best Practices</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">NOV 2022 — APR 2023</div>
-          <div class="exp-co">AVASOFT</div>
-          <div class="exp-loc">Chennai, India</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">ServiceNow<br>Developer</div>
-          <p class="exp-desc">Spearheaded development of a proprietary portal product, building bespoke widgets and UI components that became reusable assets across the practice. Delivered custom widget solutions for multiple clients across different ServiceNow product suites, and provided specialist consultation on Employee Center portal configuration and optimisation.</p>
-          <div class="exp-tags">
-            <span class="etag">Widget Development</span><span class="etag">Employee Center</span>
-            <span class="etag">UI Components</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="exp-item reveal">
-        <div class="exp-meta">
-          <div class="exp-period">MAY 2022 — OCT 2022</div>
-          <div class="exp-co">AVASOFT</div>
-          <div class="exp-loc">Chennai, India</div>
-        </div>
-        <div class="exp-body">
-          <div class="exp-role">Microsoft 365<br>Developer</div>
-          <p class="exp-desc">Developed productivity applications and SharePoint web parts using the Microsoft Power Platform, streamlining business processes and improving end-user interaction across the organisation.</p>
-          <div class="exp-tags">
-            <span class="etag">Power Platform</span><span class="etag">SharePoint</span><span class="etag">M365</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -752,13 +648,95 @@
   <div class="foot-right">BUILT WITH INTENTION</div>
 </footer>
 
+<style>
+  @keyframes loadPulse { 0%,100%{opacity:0.3} 50%{opacity:0.7} }
+  .loading-pulse { animation: loadPulse 1.5s ease-in-out infinite; color: #888; font-size:12px; font-family: var(--ff-mono); }
+</style>
+
 <script>
+  const SB_URL  = 'https://dgwzemqsjcyjvqywszdg.supabase.co';
+  const SB_KEY  = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRnd3plbXFzamN5anZxeXdzemRnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2NzQ2NDIsImV4cCI6MjA4OTI1MDY0Mn0.xXHFpyGDhQAtBjvPXq_fZJycD4TbQL7LUHH8wSPS2Ek';
+
+  const headers = {
+    'apikey': SB_KEY,
+    'Authorization': `Bearer ${SB_KEY}`
+  };
+
+  async function db(table, params = '') {
+    const res = await fetch(`${SB_URL}/rest/v1/${table}?${params}`, { headers });
+    if (!res.ok) throw new Error(`Failed to fetch ${table}`);
+    return res.json();
+  }
+
+  /* ── PROFILE / ABOUT ── */
+  async function loadProfile() {
+    const [data] = await db('profile', 'limit=1');
+    if (!data) return;
+    document.getElementById('about-lead').innerHTML =
+      `I don't just implement platforms — I <span class="underline-lime">architect the systems</span> that transform how organisations work.`;
+    document.getElementById('about-body').innerHTML = `
+      <p>${data.bio_1}</p>
+      <p>${data.bio_2}</p>
+      <p>${data.bio_3}</p>`;
+  }
+
+  /* ── SKILLS ── */
+  async function loadSkills() {
+    const data = await db('skills', 'order=id.asc');
+    const wrap = document.getElementById('skills-wrap');
+    wrap.innerHTML = data.map(s =>
+      `<span class="sk${s.category === 'sn-core' ? ' sn-core' : ''}">${s.name}</span>`
+    ).join('');
+  }
+
+  /* ── CERTIFICATIONS ── */
+  async function loadCerts() {
+    const data = await db('certifications', 'order=sort_order.asc');
+    document.getElementById('certs-list').innerHTML = data.map(c => `
+      <div class="cert-item">
+        <div class="cert-badge">${c.number}</div>
+        <div>
+          <div class="cert-name">${c.name}</div>
+          <div class="cert-org">${c.issuer}</div>
+        </div>
+      </div>`).join('');
+  }
+
+  /* ── EXPERIENCE ── */
+  async function loadExperience() {
+    const data = await db('experience', 'order=sort_order.asc');
+    document.getElementById('exp-list').innerHTML = data.map(e => `
+      <div class="exp-item reveal">
+        <div class="exp-meta">
+          <div class="exp-period">${e.period}</div>
+          <div class="exp-co">${e.company}</div>
+          <div class="exp-loc">${e.location}</div>
+        </div>
+        <div class="exp-body">
+          <div class="exp-role">${e.role.replace(' / ', '<br>')}</div>
+          <p class="exp-desc">${e.description}</p>
+          ${e.callout ? `<div class="exp-callout">▶ ${e.callout}</div>` : ''}
+          <div class="exp-tags">
+            ${(e.tags || []).map(t => `<span class="etag">${t}</span>`).join('')}
+          </div>
+        </div>
+      </div>`).join('');
+
+    /* re-observe newly added reveal elements */
+    document.querySelectorAll('.exp-item.reveal:not(.vis)').forEach(el => obs.observe(el));
+  }
+
+  /* ── SCROLL REVEAL ── */
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => {
       if (e.isIntersecting) setTimeout(() => e.target.classList.add('vis'), 60);
     });
   }, { threshold: 0.08 });
-  document.querySelectorAll('.reveal, .reveal-left').forEach(el => obs.observe(el));
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* ── BOOT ── */
+  Promise.all([loadProfile(), loadSkills(), loadCerts(), loadExperience()])
+    .catch(err => console.error('Supabase load error:', err));
 </script>
 </body>
 </html>
